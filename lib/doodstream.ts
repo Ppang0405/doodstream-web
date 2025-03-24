@@ -71,11 +71,13 @@ class Doodstream {
             },
             60
         );
+        console.debug('listFiles: ', {page, per_page, fld_id, data});
         return data;
     }
 
     async getFile({ file_code }: { file_code: string }) {
         const data = await this.fetch("/file/info", { file_code });
+        console.debug('getFile: ', {file_code, data});
         return data;
     }
 
@@ -85,6 +87,7 @@ class Doodstream {
             { search_term: query },
             60
         );
+        console.debug('search: ', {query, data});
         return data;
     }
 
@@ -93,12 +96,14 @@ class Doodstream {
             only_folders: "1",
             fld_id,
         });
+        console.debug('listFolders: ', {fld_id, data});
         return data;
     }
 
     async getFolder({ fld_id }: { fld_id: string }) {
         const data = await this.listFolders({ fld_id: "" });
-        const folder = data.result.folders.find(
+        console.debug('getFolder: ', {fld_id, data});
+        const folder = data.result?.folders.find(
             (f: any) => f.fld_id === fld_id
         );
         return {

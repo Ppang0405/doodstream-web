@@ -37,14 +37,13 @@ export default function usePagination({
             let leftRange = range(1, leftItemCount);
 
             return [...leftRange, DOTS, total];
-        } else if (shouldShowLeftDots && !shouldShowRightDots) {
-            let rightItemCount = 3 + 2 * siblings;
-            let rightRange = range(total - rightItemCount + 1, total);
+        }if (shouldShowLeftDots && !shouldShowRightDots) {
+            const rightItemCount = 3 + 2 * siblings;
+            const rightRange = range(total - rightItemCount + 1, total);
             return [firstPageIndex, DOTS, ...rightRange];
-        } else {
-            let middleRange = range(leftsiblingIndex, rightsiblingIndex);
-            return [firstPageIndex, DOTS, ...middleRange, DOTS, lastPageIndex];
         }
+            const middleRange = range(leftsiblingIndex, rightsiblingIndex);
+            return [firstPageIndex, DOTS, ...middleRange, DOTS, lastPageIndex];
     }, [total, siblings, current]);
 
     return paginationRange;

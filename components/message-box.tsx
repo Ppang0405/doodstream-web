@@ -7,7 +7,7 @@ import {
     CardHeader,
     CardTitle,
 } from "./ui/card";
-import React, { ReactNode } from "react";
+import React, { type ReactNode } from "react";
 
 import Center from "./layouts/center";
 import { InfoIcon } from "./icons";

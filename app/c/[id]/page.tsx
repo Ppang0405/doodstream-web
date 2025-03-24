@@ -1,5 +1,5 @@
 import { DEFAULT_PER_PAGE, SITENAME } from "@/lib/constants";
-import { Metadata, ResolvingMetadata } from "next";
+import type { Metadata, ResolvingMetadata } from "next";
 
 import CardList from "@/components/card-list";
 import MessageBox from "@/components/message-box";

@@ -19,9 +19,9 @@ const LButton = ({ className, liked, onLike }: any) => {
             onClick={onLike}
         >
             {liked ? (
-                <HeartFilledIcon className="size-4 mr-1 mb-0.5"></HeartFilledIcon>
+                <HeartFilledIcon className="size-4 mr-1 mb-0.5" />
             ) : (
-                <HeartIcon className="size-4 mr-1 mb-0.5"></HeartIcon>
+                <HeartIcon className="size-4 mr-1 mb-0.5" />
             )}
             {liked ? "Liked" : "Like"}
         </Button>

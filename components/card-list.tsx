@@ -15,7 +15,7 @@ const CardList = async ({
 }) => {
     const data = await doodstream.listFiles({ page, per_page, fld_id });
 
-    if (!data.result.results) {
+    if (!data.result?.results) {
         return (
             <MessageBox title="No videos found" variant="info">
                 <p className="text-center">

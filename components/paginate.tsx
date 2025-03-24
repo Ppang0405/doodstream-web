@@ -25,10 +25,10 @@ const Paginate = ({ total, current }: { total: number; current: number }) => {
 
     const createQueryString = useCallback(
         (name: string, value: number) => {
-            const params = new URLSearchParams(searchParams);
+            const params = new URLSearchParams(searchParams.toString());
             params.set(name, value.toString());
 
-            return "?" + params.toString();
+            return `?${params.toString()}`;
         },
         [searchParams]
     );

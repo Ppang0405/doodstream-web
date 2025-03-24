@@ -51,7 +51,7 @@ const SideNav = ({ folders }: { folders: any }) => {
                     </SheetDescription>
                 </SheetHeader>
                 <div className="grid gap-4 py-4 my-4">
-                    {folders.map((folder: any) => {
+                    {(folders || []).map((folder: any) => {
                         return (
                             <Link
                                 href={`/c/${folder.fld_id}`}
@@ -117,7 +117,7 @@ const NavMenu = ({ folders }: { folders: any }) => {
                     <NavigationMenuTrigger>Channels</NavigationMenuTrigger>
                     <NavigationMenuContent>
                         <ul className="grid w-[400px] gap-3 p-4 md:w-[300px] md:grid-cols-2">
-                            {folders.map((folder: any) => (
+                            {(folders || []).map((folder: any) => (
                                 <ListItem
                                     key={folder.fld_id}
                                     title={folder.name}
@@ -135,7 +135,7 @@ const NavMenu = ({ folders }: { folders: any }) => {
 
 const Navbar = async () => {
     const data = await doodstream.listFolders({ fld_id: "" });
-    const folders = data.result.folders;
+    const folders = data.result?.folders;
 
     return (
         <div className="flex justify-between items-center px-4 py-3 border-b-[1px]">
